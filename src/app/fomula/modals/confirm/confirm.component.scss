@@ -1,0 +1,87 @@
+@import '../../../../styles/mixin.scss';
+/*file upload input*/
+.file-upload {
+    display: none;
+}
+/*modal-container*/
+.modal-container {
+  width: 640px;
+  padding: 0;
+
+  .close {
+    width: 24px;
+    height: 24px;
+    background: url("../../../../assets/i/close.svg") 0 0 no-repeat;
+    background-size: 24px;
+    display:block;
+  }
+
+  .modal-body {
+    padding: 0px;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: #686868;
+
+    .content {
+      padding: 56px 60px 8px;
+
+      &.delete {
+        padding: 56px 77px 8px;
+      }
+    }
+  }
+
+  .modal-title {
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 56px;
+    letter-spacing: normal;
+    color: $text;
+  }
+
+  .modal-footer {
+    border: none;
+    padding: 32px;
+
+    .btn-reset {
+      width: 210px;
+      height: 40px;
+      border-radius: 4px;
+      background-color: #0f00ff;
+      font-size: 16px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .btn-delete {
+      width: 177px;
+      height: 40px;
+      border-radius: 4px;
+      background-color: #0f00ff;
+      font-size: 16px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
+    }
+  }
+
+  .modal-header button {
+    opacity: 1;
+  }
+}

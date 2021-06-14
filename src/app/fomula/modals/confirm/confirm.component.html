@@ -1,0 +1,36 @@
+<div class="modal-container">
+    <div class="modal-header">
+        <span class="modal-title" id="modal-basic-title" i18n>{{title}}</span>
+        <a href="javascript:;" class="close" aria-label="Close"
+                (click)="activeModal.dismiss('back')"></a>
+    </div>
+    <!--modal-header-->
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="content"
+                     [ngClass]="{'delete':data['type'] === 'reset'}">
+                    {{data['content']}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--modal-body-->
+    <div class="modal-footer">
+        <button type="submit" *ngIf="data['type'] === 'delete'"
+                (click)="onDelete()"
+                class="btn btn-primary btn-delete flex space-between middle" i18n>
+           <i class="icon icon-ddel"></i>  
+            <span> Delete </span> 
+            <span  *ngIf="data['type'] === 'delete' && data['dataType'] === 'leaf'">statement</span>
+            <span *ngIf="data['type'] === 'delete' && data['dataType'] === 'branch'">level</span>
+        </button>
+        <button type="submit" *ngIf="data['type'] === 'reset'"
+                (click)="onReset()"
+                class="btn btn-primary btn-reset" i18n>
+            Reset formula
+        </button>
+    </div>
+    <!--modal-footer-->
+</div>
+<!--modal-container-->

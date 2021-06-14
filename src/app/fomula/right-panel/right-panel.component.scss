@@ -1,0 +1,149 @@
+@import '../../../styles/mixin.scss';
+@import '../../../styles/flex.scss';
+
+/*right-panel*/
+.right-panel {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.06);
+  background-color: $white;
+  padding: 20px 16px;
+  position: relative;
+
+  .icon {
+    cursor: pointer;
+  }
+
+  .delete-btn {
+    display: block;
+    width: 20px;
+    height: 20px;
+    cursor: url("src/assets/i/tooltip.svg"), pointer;
+
+    &:hover {
+      background-color: #f4f4f4;
+      cursor: url("src/assets/i/tooltip.svg"), pointer;
+    }
+
+    i {
+      display: block;
+    }
+  }
+
+  .delete-box {
+    width: 120px;
+    height: 68px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.24);
+    background-color: rgba(61, 61, 61, 0.95);
+    padding: 8px;
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    position: absolute;
+    top: 12px;
+    right: 8px;
+    z-index: 1000;
+
+    .delete-w-btn {
+      width: 20px;
+      height: 20px;
+      margin-bottom: 12px;
+
+      i {
+        display: block;
+      }
+    }
+  }
+
+  .default-txt {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: $brown-grey;
+  }
+
+  .question-bar {
+    margin-bottom: 10px;
+    position: relative;
+
+
+    .question-title {
+      font-size: 14px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: $black;
+    }
+  }
+}
+
+/*form-wrapper*/
+.form-wrapper {
+    padding-bottom: 10px;
+    position: relative;
+    padding-right: 0;
+    width:100%;
+
+
+    .form-input {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width:70%;
+
+        &.tip {
+            cursor: url("src/assets/i/tooltip.svg"), pointer;
+        }
+    }
+
+    .init {
+        color: $white;
+    }
+
+    option {
+        color: $text;
+    }
+
+
+    .label-element {
+        padding: 5px 0px 2.5px;
+        line-height: 20px;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1;
+        letter-spacing: normal;
+        color: $brownish-grey;
+        margin-bottom: 0;
+    }
+
+    .select-placeholder {
+        padding-left: 10px;
+        height: 32px;
+        line-height: 32px;
+        opacity: 0.5;
+        font-size: 14px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        letter-spacing: normal;
+        color: $lightBlack;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        font-family: Arial, Helvetica sans-serif;
+    }
+}

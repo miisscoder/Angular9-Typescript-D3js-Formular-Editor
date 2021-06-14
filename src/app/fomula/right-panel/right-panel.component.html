@@ -1,0 +1,144 @@
+<!--not leaf and not branch-->
+<div *ngIf="panelData['type'] !== 'leaf' && panelData['type'] !== 'branch' "
+     class="right-panel default flex center middle">
+  <div class="default-txt">
+    No statement added yet
+  </div>
+</div>
+<!--leaf-->
+<div *ngIf="panelData['type'] === 'leaf'" class="right-panel leaf">
+  <div class="delete-box" *ngIf="deleteShow">
+    <div class="flex end middle">
+      <a href="javascript:;" (click)="deleteShow=false;"
+         class="delete-w-btn flex center middle">
+        <i class="icon icon-actions-active"></i>
+      </a>
+    </div>
+    <div class="flex space-between middle">
+      <span (click)="deleteShow = false;deletePanelData.emit(panelData)">Delete</span>
+      <i class="icon icon-ddel" (click)="deleteShow = false;deletePanelData.emit(panelData)"></i>
+    </div>
+  </div>
+  <div class="flex space-between middle question-bar">
+    <div class="flex start middle ">
+      <div class="question-title"> {{'Statement '+ (panelData['statementId'])}}</div>
+    </div>
+    <div class="flex end middle">
+      <a href="javascript:;" (click)="deleteShow = true"
+         class="delete-btn flex center middle">
+        <i class="icon icon-actions"></i>
+      </a>
+    </div>
+  </div>
+  <div class="row question-content">
+    <div class="col-md-12 col-sm-12">
+      <div class="form-wrapper flex space-between middle">
+        <label class="label-element"
+               i18n>Property category</label>
+        <select [class.init]="!panelData['propertyCategory']"
+                [(ngModel)]="panelData['propertyCategory']"
+                (change)="changePanelData.emit(panelData)"
+                class="form-input"
+                [class.tip]="panelData['propertyCategory']"
+                placement="bottom" ngbTooltip="{{panelData['propertyCategory']}}"
+                tooltipClass="tooltip-class">
+          <option *ngFor="let item of masterData['propertyCategory']" [value]="item">{{item}}</option>
+        </select>
+      </div>
+      <div class="form-wrapper flex space-between middle">
+        <label class="label-element"
+               i18n>Property subcategory</label>
+        <select [class.init]="!panelData['propertySubcategory']"
+                [(ngModel)]="panelData['propertySubcategory']"
+                (change)="changePanelData.emit(panelData)"
+                class="form-input"
+                [class.tip]="panelData['propertySubcategory'] "
+                placement="bottom" ngbTooltip="{{panelData['propertySubcategory']}}"
+                tooltipClass="tooltip-class">
+          <option *ngFor="let item of masterData['propertySubcategory']" [value]="item">{{item}}</option>
+        </select>
+      </div>
+      <div class="form-wrapper flex space-between middle">
+        <label class="label-element"
+               i18n>Property</label>
+        <select [class.init]="!panelData['property']"
+                [(ngModel)]="panelData['property']"
+                (change)="changePanelData.emit(panelData)"
+                class="form-input"
+                [class.tip]="panelData['property']"
+                placement="bottom" ngbTooltip="{{panelData['property']}}"
+                tooltipClass="tooltip-class">
+          <option *ngFor="let item of masterData['property']" [value]="item">{{item}}</option>
+        </select>
+      </div>
+      <div class="form-wrapper flex space-between middle">
+        <label class="label-element"
+               i18n>Relational Operator</label>
+        <select [class.init]="!panelData['relationalOperator']"
+                [(ngModel)]="panelData['relationalOperator']"
+                (change)="changePanelData.emit(panelData)"
+                class="form-input"
+                [class.tip]="panelData['relationalOperator']"
+                placement="bottom" ngbTooltip="{{panelData['relationalOperator']}}"
+                tooltipClass="tooltip-class">
+          <option *ngFor="let item of masterData['relationalOperator']" [value]="item">{{item}}</option>
+        </select>
+      </div>
+      <div class="form-wrapper flex space-between middle">
+        <label class="label-element"
+               i18n>Value</label>
+        <input placeholder="Value"
+               [(ngModel)]="panelData['value']"
+               type="text" (keyup)="changePanelData.emit(panelData)"
+               class="form-input"
+               [class.tip]="panelData['value']"
+               placement="bottom" ngbTooltip="{{panelData['value']}}"
+               tooltipClass="tooltip-class" />
+      </div>
+    </div>
+  </div>
+</div>
+<!--branch-->
+<div *ngIf="panelData['type'] === 'branch'" class="right-panel">
+  <div class="delete-box" *ngIf="deleteShow">
+    <div class="flex end middle">
+      <a href="javascript:;" (click)="deleteShow=false;"
+         class="delete-w-btn flex center middle">
+        <i class="icon icon-actions-active"></i>
+      </a>
+    </div>
+    <div class="flex space-between middle"
+         (click)="deleteShow = false;deletePanelData.emit(panelData)">
+      <span>Delete</span>
+      <i class="icon icon-ddel" ></i>
+    </div>
+  </div>
+  <div class="flex space-between middle question-bar">
+    <div class="flex start middle ">
+      <div class="question-title"> {{'Level '+ (panelData['level'])}}</div>
+    </div>
+    <div class="flex end middle">
+      <a href="javascript:;" (click)="deleteShow = true"
+         class="delete-btn flex center middle">
+        <i class="icon icon-actions"></i>
+      </a>
+    </div>
+  </div>
+  <div class="row question-content">
+    <div class="col-md-12 col-sm-12">
+      <div class="form-wrapper flex space-between middle">
+        <label class="label-element"
+               i18n>Property subcategory</label>
+        <select [class.init]="!panelData['logicalOperator']"
+                [(ngModel)]="panelData['logicalOperator']"
+                (change)="changePanelData.emit(panelData)"
+                class="form-input"
+                [class.tip]="panelData['logicalOperator'] "
+                placement="bottom" ngbTooltip="{{panelData['logicalOperator']}}"
+                tooltipClass="tooltip-class">
+          <option *ngFor="let item of masterData['logicalOperator']" [value]="item">{{item}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

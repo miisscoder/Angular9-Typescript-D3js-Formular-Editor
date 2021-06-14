@@ -1,0 +1,39 @@
+.icon {
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center center;
+
+  &.icon-add-new {
+    background-image: url("assets/i/add-new.svg");
+    width: 32px;
+    height: 32px;
+  }
+
+  &.icon-add-blue {
+    background-image: url("assets/i/add-blue.png");
+    width: 11px;
+    height: 11px;
+  }
+
+
+  &.icon-actions-active {
+    background-image: url("assets/i/actions-active.png");
+    width: 14px;
+    height: 4px;
+  }
+
+
+  &.icon-actions {
+    background-image: url("assets/i/actions.png");
+    width: 20px;
+    height: 20px;
+  }
+
+  &.icon-ddel {
+    background-image: url("assets/i/ddel.png");
+    width: 14px;
+    height: 16px;
+  }
+}

@@ -1,0 +1,76 @@
+<div class="inner-body-panel">
+  <div class="form">
+    <div class="form-body">
+      <div class="row head-row">
+        <div class="col-md-12 col-sm-12">
+          <div class="flex space-between middle">
+            <h3>Logical formula editor</h3>
+            <button class="btn btn-primary btn-reset"
+                    (click)="onReset()" type="reset"
+                    [class.disable]="getResetDisableStatus()" i18n>
+              Reset formula
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--head-row-->
+      <div class="row content-row space-between">
+        <div class="col-md-8 col-sm-12 col-1">
+          <div class="scroll-panel small no-shadow">
+            <div #panel class="body-panel scroll-container "
+                 [perfectScrollbar]="configScrollbar">
+              <div id="tree"></div>
+              <a id="first" href="javascript:;"
+                 class="add-first flex center middle"
+                 *ngIf="addFirstShow"
+                 (click)="addFirst()">
+                <i class="icon icon-add-blue"></i>
+                <span>Add first statement</span>
+              </a>
+            </div>
+          </div>
+          <div class="formula-row"
+               *ngIf="formula === 'No statement added yet'">
+            <div class="formula-content">
+              <div class="formula-txt">{{formula}}</div>
+            </div>
+          </div>
+          <div class="formula-row"
+               *ngIf="formula !== 'No statement added yet'"
+               [perfectScrollbar]="configScrollbar">
+            <div id="formula" class="formula-content flex center middle">
+              <div *ngFor="let item of formulas;let i = index"
+                   class="formula-txt">{{item}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12 col-2">
+          <app-right-panel *ngIf="treeData" [panelData]="panelData"
+                           (changePanelData)="changePanelData()"
+                           (deletePanelData)="onDelete($event)"></app-right-panel>
+        </div>
+      </div>
+      <!--content-row-->
+    </div>
+    <!--form-body-->
+    <div class="footer-panel">
+      <div class="footer-buttons flex end middle">
+        <button type="submit" class="btn btn-secondary btn-save"
+                i18n>
+          Save
+        </button>
+      </div>
+    </div>
+    <!--footer-panel-->
+  </div>
+  <!--form-->
+</div>
+<!--inner-body-panel-->
+<div class="flex space-between middle">
+  <div class="top-tips flex-grid" *ngIf="addDonePopup">
+    <i class="icons icon-done"></i>
+    <span class="txt">{{donePopupContent}}</span>
+    <a href="javascript:;" class="btn-close" (click)="addDonePopup = false"></a>
+  </div>
+</div>
+<!--bar-->

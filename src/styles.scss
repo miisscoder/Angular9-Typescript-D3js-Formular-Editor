@@ -1,1 +1,80 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import 'styles/flex.scss';
+@import 'styles/icons.scss';
+@import '~perfect-scrollbar/css/perfect-scrollbar.css';
+
+// custome-select
+.ng-select {
+  outline: none;
+
+  &.hide-val {
+    &.ng-select-multiple .ng-select-container .ng-value-container .ng-value {
+      display: none;
+    }
+  }
+
+  &.grayed {
+    background-color: rgba(#dbdbdb, 0.8);
+  }
+
+  &.ng-select-multiple .ng-select-container {
+    .ng-value-container {
+      .ng-placeholder {
+        top: 10px;
+      }
+
+      .ng-value {
+        border-radius: 12px;
+        border: solid 1px #bababa;
+        background-color: rgba(#dbdbdb, 0.8);
+        height: 24px;
+        line-height: 22px;
+        display: flex;
+        flex-direction: row-reverse;
+
+        .ng-value-icon.left {
+          border-right: none;
+
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  .ng-select-container {
+    background-color: transparent;
+
+    .ng-value-container {
+      font-size: 14px;
+      color: #262626;
+    }
+
+    .ng-arrow-wrapper {
+      line-height: 10px;
+
+      .ng-arrow {
+        border-width: 0 1px 1px 0;
+        transform: rotate(45deg);
+        height: 6px;
+        width: 6px;
+        border-color: #464646;
+        vertical-align: top;
+      }
+    }
+  }
+
+  .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+    font-size: 14px;
+    color: #262626;
+  }
+}
+
+
+
+.modal-dialog {
+  max-width: 642px;
+}

@@ -1,0 +1,46 @@
+ {
+    "actionTypes": [
+      "Advanced",
+      "Standard"
+    ],
+    "planningTypes": [
+      "Outage related",
+      "Non-outage related"
+    ],
+    "maintenances": [
+      "Inspection",
+      "Predictive"
+    ],
+    "periocities": [
+      "days",
+      "months",
+      "weeks",
+      "years"
+    ],
+    "propertyCategory": [
+      "Basic information",
+      "Advanced information"
+    ],
+    "propertySubcategory": [
+      "Lorem ipsum",
+      "Lorem ipsum2"
+    ],
+    "property": [
+      "Serial number",
+      "None Serial number"
+    ],
+    "logicalOperator": [
+      "AND",
+      "OR",
+      "XOR"
+    ],
+    "relationalOperator": [
+      "=",
+      "<",
+      ">",
+      "<=",
+      ">=",
+      "!="
+    ]
+  }
+
